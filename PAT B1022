@@ -1,0 +1,21 @@
+#include<stdio.h>
+int z[40];
+int n = 0;
+void sqre(int num,int q) {
+	int sun = 0;
+	do {
+		z[n++] = num % q;
+		num = num / q;
+	} while (num != 0);
+}
+int main()
+{	
+	int num1, num2, sum , q;
+	printf("please enter num1,num2,q:");
+	scanf("%d %d %d", &num1, &num2, &q);
+	sum = num1 + num2;
+	sqre(sum, q);
+	for (int i = n - 1; i >= 0; --i) {
+		printf("%d",z[i]);
+	}
+}
