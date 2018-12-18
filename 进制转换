@@ -1,0 +1,15 @@
+进制转换
+其他进制转十进制（P进制转十进制）
+int y = 0，product = 1; //Product 在循环中会不断乘P，得到1，P,P^2,P^3......
+while(x != 0){
+    y=y + ( x % 10) *product;
+    x = x / 10;
+    product = product * P;
+}
+
+十进制转Q进制（Q进制表示其他进制）
+int z[40];int num=0;
+do{
+    z[num++] = y%Q;
+    y = y / Q;
+}while(y!=0);
