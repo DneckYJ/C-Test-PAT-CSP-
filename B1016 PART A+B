@@ -1,0 +1,32 @@
+//《算法笔记上机实验》P8  B1016
+#include<stdio.h>
+#include<stdbool.h>
+int sumdx(long x,long dx) {
+	int m;
+	int sumd = 0;
+	int i = 1;
+	while (x != 0) {
+		m = x % 10;
+		if (m == dx) {
+			sumd = sumd + (dx*i);
+			i = i * 10;
+
+		}
+		x=x / 10;
+		
+	}
+	return sumd;
+}
+
+int main() {
+
+	long long a, da, b, db;                
+	long suma = 0, sumb = 0;
+	long sum = 0;
+	scanf("%lld%lld%lld%lld", &a,&da,&b,&db);
+	suma = sumdx(a,da);
+	sumb = sumdx(b,db);
+	sum = suma + sumb;
+	printf("%lld\n", sum);
+	return 0;
+}
